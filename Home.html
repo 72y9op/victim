@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="assets/pages.css" type="text/css" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="assets/images/0.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="assets/vue/vuetify.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="assets/js/Home.js"></script>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Victim - Home</title>
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+        <div class="back" onclick="window.location='Victim.html';">
+            <div class="back-arrow"><</div>
+            <div class="logo">Victim</div>
+        </div>
+        <div class="navi">
+            <a class="active" href="Home.html">Home</a>
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About</a>
+        </div>
+            <!--<div style="text-align:right;padding-bottom: 6.8px;padding-top: 6.8px;margin-top: -47.6px;padding-right: 6.8px;" >
+		        <label id="switch" class="switch">
+		            <input type="checkbox" onchange="toggleTheme()" id="slider">
+		            <span class="slider round"></span>
+		        </label>
+       		</div>-->
+
+		  <a href="javascript:void(0);" class="h_icon" onclick="myFunction()">
+    		<i class="fa fa-bars"></i>
+		  </a>
+
+    </div>
+	        <div class="pannel">
+	            <!--<div class="victim-page">
+			        <div class="page">
+			       		  <p class="name">Nom, Prénom, 2nd, 3em</p>
+						  <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Blank&hairColor=Brown&facialHairType=Blank&clotheType=Hoodie&clotheColor=PastelRed&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light'
+/ style="width: 120px;">
+						  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus massa ut ante ullamcorper, at auctor augue fermentum. Suspendisse potenti. Donec tempor augue id hendrerit ornare. Curabitur sed nibh scelerisque, porta ex vel, finibus felis. Sed sem lectus, cursus a libero pharetra, placerat feugiat velit. Duis nec odio tincidunt, accumsan turpis at, porta neque. Cras finibus pulvinar est, nec aliquam quam tincidunt at. Etiam gravida rhoncus dui. Sed non ullamcorper urna, non facilisis tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent condimentum dignissim tincidunt. </p>
+		   			</div>
+	            </div>-->
+	        </div>
+        <div class="fab">
+            <div id="app">
+                <v-app id="inspire">
+                    <v-card id="create">
+                        <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :open-on-hover="hover" :transition="transition">
+                            <template v-slot:activator>
+                                <v-btn light class="mx-2" v-model="fab" elevation="0" color="var(--font-color)" fab>
+                                    <v-icon v-if="fab">mdi-close</v-icon>
+                                    <v-icon v-else>mdi-menu</v-icon>
+                                </v-btn>
+                            </template>
+                            <v-tooltip left color="var(--navbar">
+                                <template v-slot:activator="{ on }">
+                                   <v-btn small fab v-on="on" color="var(--font-color)" elevation="0" class="mx-2" :loading="isSelecting" @click="onButtonClick" >
+									  <v-icon>mdi-folder-open</v-icon>
+									  </v-btn>
+									  <input ref="uploader" class="d-none" type="file" accept="/*" @change="onFileChanged" >
+                                </template>
+                                <span>Import Victim</span>
+                            </v-tooltip>
+                            <v-tooltip left color="var(--navbar)">
+                                <template v-slot:activator="{ on }">
+                                    <v-btn class="mx-2" fab v-on="on" small elevation="0" color="var(--font-color)">
+                                        <v-icon>mdi-plus</v-icon>
+                                    </v-btn>
+                                </template>
+                                <span>Add new Victim</span>
+                            </v-tooltip>
+                        </v-speed-dial>
+                    </v-card>
+                </v-app>
+            </div>
+        </div>
+        <script src="assets/vue/vue.js"></script>
+        <script src="assets/vue/vuetify.js"></script>
+        <script>
+        function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+} 
+            new Vue({
+                el: '#app',
+                vuetify: new Vuetify(),
+                data: () => ({
+                    direction: 'top',
+                    fab: false,
+                    fling: false,
+                    hover: false,
+                    tabs: null,
+                    top: false,
+                    right: true,
+                    bottom: true,
+                    left: false,
+                    transition: 'slide-y-reverse-transition',
+                    selectedFile: null,
+    				isSelecting: false
+                }),
+				methods: {
+					onButtonClick() {
+					  this.isSelecting = true
+					  window.addEventListener('focus', () => {
+						this.isSelecting = false
+					  }, { once: true })
+
+					  this.$refs.uploader.click()
+					},
+					onFileChanged(e) {
+					  this.selectedFile = e.target.files[0]
+					  
+					  // do something
+					}
+				  }
+            })
+    new Vue({
+      el: '#page',
+      vuetify: new Vuetify(),
+    })
+    
+        </script>
+</body>
+
+</html>

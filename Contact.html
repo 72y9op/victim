@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="assets/pages.css" type="text/css" />
+    <link id="favicon" rel="shortcut icon" type="image/png" href="assets/images/0.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<link href="assets/vue/vuetify.min.css" rel="stylesheet" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+	
+    <script type="text/javascript" src="assets/js/Home.js"></script>
+    <title>Victim - Contact</title>
+</head>
+
+<body>
+    <div class="topnav">
+    	<div class="back" onclick="window.location='Victim.html';">
+   			<div class="back-arrow"><</div>
+			<div class="logo">Victim</div>
+        </div>
+        <div class="navi">
+            <a href="Home.html">Home</a>
+            <a class="active" href="Contact.html">Contact</a>
+            <a href="About.html">About</a>
+        </div>
+        <!--<div style="text-align:right;padding-bottom: 6.8px;padding-top: 6.8px;margin-top: -47.6px;padding-right: 6.8px;" >
+            <label id="switch" class="switch">
+                <input type="checkbox" onchange="toggleTheme()" id="slider">
+                <span class="slider round"></span>
+            </label>
+        </div>-->
+    </div>
+ <div id="app">
+<template>
+  <div class="text-center">
+    <v-btn color="error" @click="overlay = !overlay" >
+      Show Overlay
+    </v-btn>
+
+    <v-overlay :value="overlay">
+      <v-btn icon @click="overlay = false" >
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-overlay>
+  </div>
+</template>
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+	new Vue({
+	  el: '#app',
+	  vuetify: new Vuetify(),
+	  data: () => ({
+		overlay: false,
+	  }),
+	})
+  </script>
+  
+</body>
+
+</html>
