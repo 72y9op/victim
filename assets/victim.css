@@ -1,0 +1,230 @@
+
+
+@font-face {
+	font-family: 'Ginchiest Regular';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Ginchiest Regular'), url('fonts/Ginchiest.woff') format('woff');
+}
+
+.theme-light {
+	--color-primary: pink;
+	--color-secondary: #ffa4b4;
+	--font-color: #ffffff;
+	--font-color-secondary: #ffa4b4;
+}
+
+
+/*
+
+.theme-dark {
+    --color-primary: #202020;
+    --color-secondary: #0d0d0d;
+    --font-color: white;
+    --font-color-secondary: grey;
+}*/
+
+body {
+	background-color: var(--color-primary);
+	/* couleur grise : #202020 */
+	font-family: 'roboto';
+	
+}
+
+.title {
+	color: var(--font-color);
+	font-family: 'Ginchiest Regular';
+	font-size: 10em;
+	transition: transform 1s ease;
+	text-shadow: 0px 0px var(--font-color-secondary), -1px 1px var(--font-color-secondary), -2px 2px var(--font-color-secondary), -3px 3px var(--font-color-secondary), -4px 4px var(--font-color-secondary), -5px 5px var(--font-color-secondary), -6px 6px var(--font-color-secondary), -7px 7px var(--font-color-secondary), -8px 8px var(--font-color-secondary);
+	cursor: default;
+  	-moz-user-select: none;
+  	-webkit-user-select: none;
+}
+
+.cop {
+	color: var(--color-secondary);
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	text-decoration: none;
+	width: 200px;
+	outline: none;
+}
+
+.logo {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.btn {
+	display: inline-block;
+	color: var(--font-color);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	transition: opacity 0.2s ease-in;
+	opacity: 0;
+	border: 2px solid var(--font-color);
+	width: 164px;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 2px;
+	outline: none;
+}
+
+.btn-primary {
+	background-color: transparent;
+	transition: .5s;
+	padding: 9px 30px;
+}
+
+.thm {
+	font-size: 10px;
+	opacity: 0;
+	transition: opacity 0.2s ease-in;
+	position: absolute;
+	margin-top: 15px;
+	margin-left: -10px;
+	right: 0px;
+	text-align: left;
+	color: var(--font-color);
+}
+
+
+/* The switch - the box around the slider */
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-secondary);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 40px;
+	width: 40px;
+	left: 0px;
+	bottom: 4px;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	box-shadow: 0 0px 15px #2020203d;
+	background: white url('https://i.ibb.co/FxzBYR9/night.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+input:checked+.slider {
+	background-color: var(--color-secondary);
+}
+
+input:focus+.slider {
+	box-shadow: 0 0 1px #ffffff;
+}
+
+input:checked+.slider:before {
+	-webkit-transform: translateX(24px);
+	-ms-transform: translateX(24px);
+	transform: translateX(24px);
+	background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+
+/* #### Functions */
+
+.logo:hover .title {
+	transform: translateY(-50%);
+}
+
+.logo:hover .btn {
+	opacity: 1;
+}
+
+.switch:hover .thm {
+	opacity: 1;
+}
+
+.btn:hover {
+	background-color: var(--font-color);
+	color: var(--font-color-secondary);
+	box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-color-secondary);
+}
+
+@media screen and (max-width: 600px) {
+	.logo .title {
+	transform: translateY(-50%);
+	font-size: 7em;
+	}
+
+	.logo .btn {
+		opacity: 1;
+		margin-top: 50px;
+	}
+	
+	@media screen and (orientation: landscape) {
+		.logo .btn {
+			//top: 150px;
+		}
+		.logo .title {
+			margin-top: 50px;
+		}
+		.cop {
+			bottom: 5%;
+			font-size: 12px;
+		}
+	}
+
+
+}
+
+
+
+
+
