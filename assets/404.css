@@ -7,11 +7,12 @@
 }
 
 .theme-light {
-	--color-primary: pink;	/* rose */
-	--color-secondary: #ffa4b4;	/* rose foncé */
-	--font-color: #ffffff;	/* blanc */
-	--font-color-secondary: #ffa4b4;	/* rose foncé */
-	--navbar: #E5A3AD;
+    --color-primary: #0000005c;
+    --color-secondary: #ffa4b4;
+    --font-color: #ffffff;
+    --font-color-secondary: #9f9f9f5c;
+    --navbar: #00000080;
+    --navbar-secondary : #00000080;
 }
 
 /*.theme-dark {
@@ -27,18 +28,27 @@ html {
 	    overflow:auto;
 }
 
-body {
-	background-image: url("images/walp_1.png");	
-	background-repeat: repeat-x;
+body {  
+	width: 100%;
+	height: 100vh;
+	background-color: #000;
+	background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
 	font-family: 'roboto';
 	/*animation: animation 500s linear infinite;*/
 }
+
+canvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
 
 .topnav {
 	overflow: hidden;
 	font: bold 14px/1.4 'Open Sans', arial, sans-serif;
 	background-color: var(--color-primary);
-	box-shadow: 0px 5px var(--font-color-secondary);
+	box-shadow: 0px 5px var(--navbar-secondary);
 }
 
 .topnav .navi {
@@ -92,7 +102,7 @@ body {
 }
 
 .topnav a:hover {
-	color: var(--navbar);
+	color: var(--font-color-secondary);
 }
 
 
@@ -111,13 +121,6 @@ body {
 }
 
 
-.fab {
-   text-align: center;
-   position: fixed;
-   right: 50px;
-   bottom: 50px;
-}
-
 .back:hover .logo{
 	transform: translateX(25px);
 }
@@ -135,44 +138,6 @@ box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-
 }
 .v-btn__content {
 	color: var(--font-color-secondary);
-}
-
-.pannel {
-	display: block;
-	background-color: var(--font-color-secondary);
-	height:auto;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	padding-right: 25px;
-	padding-left: 25px;
-	border-radius: 5px;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	width: 627px;
-}
-
-.victim-page {
-	height: 200px;
-	background-color: white;
-	border-radius: 5px;
-	padding: 5px;
-	transition: all .5s ease-in-out;
-}
-#create .v-speed-dial {
-  position: absolute;
-}
-
-#create .v-btn--floating {
-  position: relative;
-}
-
-.v-application .elevation-0 {
-    box-shadow: ;
-}
-.theme--light.v-btn {
-    color: rgba(229, 163, 173, 0.87);
 }
 
 .tooltip {
@@ -221,6 +186,43 @@ box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-
   
 }
 
+.image-404{
+	transform: translateX(-50%) translateY(-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+}
+
+.btn {
+	display: inline-block;
+	color: var(--font-color);
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	transition: opacity 0.2s ease-in;
+	border: 2px solid var(--font-color);
+	width: auto;
+	font-size: 20px;
+	text-decoration: none;
+	border-radius: 2px;
+	outline: none;
+}
+
+.btn-primary {
+	background-color: transparent;
+	transition: .5s;
+	padding: 9px 30px;
+}
+
+.btn:hover {
+	background-color: var(--font-color);
+	color: var(--navbar);
+	box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-color-secondary);
+}
+
+
 @media screen and (max-width: 600px) {
   .navi a:not(:first-child) {display: none;}
   .topnav a.h_icon {
@@ -257,7 +259,6 @@ box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-
    right: 10px;
    bottom: 10px;
 }
-}
 
 .loader {
 	position : absolute;
@@ -290,9 +291,10 @@ box-shadow: 3px 3px 12px var(--font-color-secondary), -3px -3px 12px var(--font-
     font-size: 2em;
 }
 
-/*@keyframes animation {
-   100%{
-    background-position:-3000px 0;
-  }
-}*/
+.image-404 {
+	width: auto;
+}
+
+}
+
 
